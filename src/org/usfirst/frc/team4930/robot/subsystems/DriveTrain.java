@@ -49,7 +49,7 @@ public class DriveTrain extends Subsystem {
     }
     
     public void takeJoystickInputs(Joystick left, Joystick right){
-    	robotDrive.tankDrive(-left.getY(), -right.getY());
+    	robotDrive.tankDrive(-left.getY(), -right.getY(), true);
     }
     
     public void stop() {
