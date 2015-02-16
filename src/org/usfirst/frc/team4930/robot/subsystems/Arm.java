@@ -43,18 +43,9 @@ public class Arm extends Subsystem {
         //setDefaultCommand(new MySpecialCommand());
     }
     
-    public void canUp() {
-    	//Tells the motor at PMW port 2 to go at 10% power up
-    	pWM2.set(0.1);
-    	//Tells the motor at PMW port 7 to go at 10% power up
-    	pWM7.set(0.1);
-    }
-    
-    public void canDown() {
-    	//Tells the motor at PMW port 2 to go at 10% power down
-    	pWM2.set(-0.1);
-    	//Tells the motor at PMW port 7 to go at 10% power down
-    	pWM7.set(-0.1);
+    public void moveCan(double x) {
+    	pWM2.set(x);
+    	pWM7.set(x);
     }
     
     public void stop(){

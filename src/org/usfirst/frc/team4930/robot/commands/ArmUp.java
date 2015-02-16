@@ -37,7 +37,7 @@ public class  ArmUp extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.arm.canUp();
+    	Robot.arm.moveCan(Robot.oi.joystick2.getY());
     }
 
     // Make this return true when this Command no longer needs to run execute()
