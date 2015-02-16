@@ -36,23 +36,50 @@ public class  Autonomous extends Command {
     protected void initialize() {
     }
 
-    // Called repeatedly when this Command is scheduled to run
+    // THIS WILL ONLY RUN ONCE.
     protected void execute() {
     	
+    	/* 
+    	 * Autonoums Pseudocode
+    	 * 
+    	 * 1. drive x rotations
+    	 * 2. intake tote/lift tote
+    	 * 3. lift can
+    	 * 4. drive x rotations
+    	 * 5. intake 2nd tote/lift 2nd tote
+    	 * 6. turn 45 degrees
+    	 * 7. drive x rotations(+, +)
+    	 * 8. elevator down
+    	 * 9. back away
+    	 * 10. intake motors out
+    	 */
+    	
+    	// be sure to always reset the encoders before beginning
     	Robot.encoders.resetBoth();
     	
+    	// get the value for the left encoder
     	int leftEnc = Robot.encoders.getLeftDriveTrain();
+    	
+    	// get the value for the right encoder
     	int rightEnc = Robot.encoders.getRightDriveTrain();
     	
+    	// run the drive train forward at full throttle
+    	// range: -1.0 to 1.0
+    	// left value = left pretend joystick value
+    	// right value = right pretend joystick value
     	Robot.driveTrain.runMotors(1.0, 1.0);
+    	
+    	// timer delay for 2 seconds
     	Timer.delay(2);
+    	
+    	// stop the drive train motors
     	Robot.driveTrain.stop();
     	
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return true;
     }
 
     // Called once after isFinished returns true
