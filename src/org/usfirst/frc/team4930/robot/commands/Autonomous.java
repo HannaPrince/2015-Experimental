@@ -13,6 +13,7 @@
 package org.usfirst.frc.team4930.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.Timer;
 import org.usfirst.frc.team4930.robot.Robot;
 
 /**
@@ -37,6 +38,16 @@ public class  Autonomous extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	
+    	Robot.encoders.resetBoth();
+    	
+    	int leftEnc = Robot.encoders.getLeftDriveTrain();
+    	int rightEnc = Robot.encoders.getRightDriveTrain();
+    	
+    	Robot.driveTrain.runMotors(1.0, 1.0);
+    	Timer.delay(2);
+    	Robot.driveTrain.stop();
+    	
     }
 
     // Make this return true when this Command no longer needs to run execute()

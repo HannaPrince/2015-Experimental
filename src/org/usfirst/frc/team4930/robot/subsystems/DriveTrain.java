@@ -52,6 +52,10 @@ public class DriveTrain extends Subsystem {
     	robotDrive.tankDrive(-left.getY(), -right.getY(), true);
     }
     
+    public void runMotors(double left, double right){
+    	robotDrive.tankDrive(-left, -right);
+    }
+    
     public void stop() {
     	robotDrive.tankDrive(0, 0);
     }
