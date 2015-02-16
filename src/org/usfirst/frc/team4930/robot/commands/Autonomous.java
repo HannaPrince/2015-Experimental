@@ -43,16 +43,19 @@ public class  Autonomous extends Command {
     	 * Autonoums Pseudocode
     	 * 
     	 * 1. drive x rotations
-    	 * 2. intake tote/lift tote
-    	 * 3. lift can
-    	 * 4. drive x rotations
-    	 * 5. intake 2nd tote/lift 2nd tote
-    	 * 6. turn 45 degrees
-    	 * 7. drive x rotations(+, +)
-    	 * 8. elevator down
-    	 * 9. back away
-    	 * 10. intake motors out
+    	 * 2. intake tote
+    	 * 3. lift tote
+    	 * 4. lift can
+    	 * 5. drive x rotations
+    	 * 6. intake 2nd tote/lift 2nd tote
+    	 * 7. turn 45 degrees
+    	 * 8. drive x rotations(+, +)
+    	 * 9. elevator down
+    	 * 10. back away
+    	 * 11. intake motors out
     	 */
+    	
+    	// ### 1 ###
     	
     	// be sure to always reset the encoders before beginning
     	Robot.encoders.resetBoth();
@@ -62,6 +65,46 @@ public class  Autonomous extends Command {
     	
     	// get the value for the right encoder
     	int rightEnc = Robot.encoders.getRightDriveTrain();
+    	
+    	// run forward for 100 encoder rotations
+    	while (leftEnc < 100 && rightEnc < 100) {
+    		
+    		// ### 2 ###
+    		
+        	// run intake motors
+        	Robot.intake.rotate(-0.75);
+        	// run drive motors
+    		Robot.driveTrain.runMotors(0.5, 0.5);
+		}
+    	
+    	Robot.intake.stop();
+    	Robot.driveTrain.stop();
+    	
+    	// ### 3 ###
+    	
+    	Robot.elevator.move(0.5);
+    	Timer.delay(1);
+    	Robot.elevator.stop();
+    	
+    	// ### 4 ###
+    	
+    	Robot.arm.moveCan(0.5);
+    	Timer.delay(1);
+    	Robot.arm.stop();
+    	
+    	// ### 5 ###
+    	
+    	while (leftEnc < 50 && rightEnc < 50) {
+        	// run drive motors
+    		Robot.driveTrain.runMotors(0.5, 0.5);
+		}
+    	
+    	
+    	
+    	
+    	
+    	
+    	// ######## Code Below Is A Sample From Kiddy #########
     	
     	// run the drive train forward at full throttle
     	// range: -1.0 to 1.0
