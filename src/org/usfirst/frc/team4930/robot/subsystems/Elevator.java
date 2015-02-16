@@ -33,16 +33,12 @@ public class Elevator extends Subsystem {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     }
-    // Outputs # 3 & 6 spin in the same direction to lift tote
-    public void elevatorUp() {
-    	pWM3.set(0.1);
-    	pWM6.set(-0.1);
+
+    public void move(double x) {
+    	pWM3.set(x);
+    	pWM6.set(-x);
     }
-    // Outputs # 3 & 6 spin to lower a tote 
-    public void elevatorDown() {
-    	pWM3.set(-0.1);
-    	pWM6.set(0.1);
-    }
+
     // Motors stop running 
     public void stop() {
     	pWM3.set(0.0);
