@@ -18,9 +18,9 @@ import org.usfirst.frc.team4930.robot.Robot;
 /**
  *
  */
-public class  ArmDown extends Command {
+public class  ArmController extends Command {
 
-    public ArmDown() {
+    public ArmController() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
 
