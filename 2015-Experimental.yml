@@ -239,7 +239,7 @@ Children:
   - Name: Encoders
     Base: Subsystem
     Children:
-    - Name: LeftDriveTrainEncoder
+    - Name: LeftDriveTrain
       Base: Quadrature Encoder
       Children: []
       Properties:
@@ -275,7 +275,7 @@ Children:
           value: '1'
         Reverse Direction: !!robotbuilder.data.properties.BooleanProperty {default: false,
           name: Reverse Direction, validators: null, value: false}
-    - Name: RightDriveTrainEncoder
+    - Name: RightDriveTrain
       Base: Quadrature Encoder
       Children: []
       Properties:
