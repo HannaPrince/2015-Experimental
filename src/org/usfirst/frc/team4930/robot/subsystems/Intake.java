@@ -30,16 +30,12 @@ public class Intake extends Subsystem {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     }
-    // Motors at outputs 4 and 5 will rotate in the same direction to take a tote in
-    public void rotateIn() {
-    	pWM4.set(-0.1);
-    	pWM5.set(0.1);
+
+    public void rotate(double x) {
+    	pWM4.set(x);
+    	pWM5.set(-x);
     }
-    // Motors at outputs 4 and 5 will rotate in the same direction as each other to remove a tote from the bot
-    public void rotateOut() {
-    	pWM4.set(0.1);
-    	pWM5.set(-0.1);
-    }
+    
     // The Motors will stop moving
     public void stop() {
     	pWM4.set(0.0);
