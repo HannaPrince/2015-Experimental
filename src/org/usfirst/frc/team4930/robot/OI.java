@@ -70,7 +70,7 @@ public class OI {
         
         elevatorDownButton = new JoystickButton(joystick2, 6); //sets elevatorDownButton to button 6 on joystick 2
         elevatorDownButton.whileHeld(new ElevatorDown());      //the elevator goes down while the button is held
-        elevatorUpButton = new JoystickButton(joystick2, 3);   //sets elevatorUpButton to buttom 3 on joystick 2
+        elevatorUpButton = new JoystickButton(joystick2, 3);   //sets elevatorUpButton to button 3 on joystick 2
         elevatorUpButton.whileHeld(new ElevatorUp());		   //the elevator goes up while the button is held
         intakeOutButton = new JoystickButton(joystick2, 5);    //sets intakeOutButton to button 5 on joystick 2
         intakeOutButton.whileHeld(new IntakeOut());			   //the intake goes in while the button is held
